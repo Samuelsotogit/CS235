@@ -6,20 +6,30 @@ int main(int argc, char const* argv[]) {
     // Write your code here
 
     //Must give 3 arguments
-    if (argc != 3) {
+    if (argc != 4) {
         std::cerr << "You need to give 3 arguments" << endl;
+        return 1;
     }
     //Transform command line args into integers
     int a = atoi(argv[1]);
     int b = atoi(argv[2]);;
     int c = atoi(argv[3]);;
-    // Assign variables from the command line args.
-    cin >> a;
-    cin >> b;
-    cin >> c;
-    //Display user input
-    cout << "a b c" << endl;
     //Write the functionality of the code here
+    if (a < b) {
+        for (int i=a; i <= b; ++i) {
+            if ((i%c) ==  0) {
+                cout << i << endl;
+            }
+
+        }
+    }
+    else if (a > b) {
+        for (int i=a; i>=b; --i) {
+            if ((i%c) == 0) {
+                cout << i << endl;
+            }
+        }
+    }
 
 
     return 0;
