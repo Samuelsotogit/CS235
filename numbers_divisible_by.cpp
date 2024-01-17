@@ -15,12 +15,12 @@ int main(int argc, char const* argv[]) {
     int b = atoi(argv[2]);;
     int c = atoi(argv[3]);;
     //Write the functionality of the code here
+    //Check if numbers should display in ascending or descending order.
     if (a < b) {
         for (int i=a; i <= b; ++i) {
             if ((i%c) ==  0) {
                 cout << i << endl;
             }
-
         }
     }
     else if (a > b) {
@@ -30,7 +30,5 @@ int main(int argc, char const* argv[]) {
             }
         }
     }
-
-
     return 0;
 }

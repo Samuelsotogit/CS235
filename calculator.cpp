@@ -21,36 +21,30 @@ int main(int argc, char const* argv[]) {
     while (true) {
         //Retrieve variables from user
         //Determine type of operation
-        cout << "operation: " << endl;
-        std::getline(cin, operation);
-        cout << "left operand: " << endl;
+        operation = input("operation: ");
+        if (operation.empty()) {
+            break;
+        }
+        if (operation != "add" && operation != "subtract" && operation != "multiply" && operation != "divide" && operation != "mod") {
+            cout << operation << " is not a valid operation" << endl;
+            continue;
+        }
         //Define variable a
-        cin >> a;
-        cout << "right operand: " << endl;
+        a = stoi(input("left operand: "));
         //Define variable b
-        cin >> b;
-
+        b = stoi(input("right operand: "));
         //Determine how to evaluate
         if (operation == "add") {
             cout << a + b << endl;
-            break;
         } else if (operation == "subtract") {
             cout << a - b << endl;
-            break;
         } else if (operation == "multiply") {
             cout << a * b << endl;
-            break;
         } else if (operation == "divide") {
             cout << a / b << endl;
-            break;
         } else if (operation == "mod") {
             cout << a % b << endl;
-            break;
-        } else {
-            cout << operation << " is not a valid operation" << endl;
         }
-        cout << endl;
-        std::getline(cin, operation);
     }
     return 0;
 }
